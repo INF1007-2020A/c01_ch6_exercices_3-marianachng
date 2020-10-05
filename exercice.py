@@ -3,7 +3,7 @@
 
 from random import randint
 from structs import Queue, Stack
-
+from collections import deque
 
 def reverse_data(data: list = None):
     # TODO: Demander 10 valeurs à l'utilisateur,
@@ -11,11 +11,17 @@ def reverse_data(data: list = None):
     # et les retourner en ordre inverse, sans utiliser de liste.
 
     if data is None:
-        pass  # Demander les valeurs ici
+        data = [input("Entrez une donnee:") for _ in range(10)]
+          # Demander les valeurs ici
 
-    reversed_data = None  # Stocker le résultat ici
+    s = Stack()
 
-    return reversed_data
+    for d in data:
+        s.put(d)
+
+    # Stocker le résultat ici
+
+    return [s.get() for _ in range(len(s))]
 
 
 def delete_nth_from_stack(data: Stack, position: int) -> Stack:
