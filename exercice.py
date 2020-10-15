@@ -12,10 +12,8 @@ def reverse_data(data: list = None):
 
     if data is None:
         data = [input("Entrez une donnee:") for _ in range(10)]
-          # Demander les valeurs ici
 
     s = Stack()
-
     for d in data:
         s.put(d)
 
@@ -26,6 +24,8 @@ def reverse_data(data: list = None):
 
 def delete_nth_from_stack(data: Stack, position: int) -> Stack:
     # TODO: Supprimer le énième (position) élément de data et retourner la nouvelle structure de données.
+
+
     return Stack()
 
 
@@ -36,12 +36,28 @@ def delete_nth_from_queue(data: Queue, position: int) -> Queue:
 
 def sort_stack(data: Stack) -> Stack:
     # TODO: Retourner la séquence triée
-    return Stack()
+
+    sortedStack = Stack()
+    # algorithme idea: 
+    # si stack initial n'est pas vide, on pop la derniere valeur et on la push dans le nouveau stack 
+    # ensuite, on compare le top de data avec le top de sortedStack 
+    # topdata > topsortedStack alors on push topdata dans sortedStack 
+    while data != None:
+        data.pop()
+        while sortedStack != None and int(top(sortedStack)) < int(top(data)):
+            data.push()
+            sortedStack.pop()
+        sortedStack.push(data.top)
+
+    return sortedStack
 
 
 def sort_queue(data: Queue) -> Queue:
     # TODO: Retourner la séquence triée
-    return Queue()
+
+    sortedQueue = Stack()
+
+    return sortedQueue
 
 
 def string_and_structs(string: str) -> tuple:
@@ -70,7 +86,7 @@ def main() -> None:
 
     lifo = Stack()
     lifo.put_many([randint(0, 1000) for _ in range(20)])
-    print(f"On ordonne une file: {sort_queue(lifo)}")
+    print(f"On ordonne une file: {sort_stack(lifo)}")
 
     fifo = Queue()
     fifo.put_many([randint(0, 1000) for _ in range(20)])
