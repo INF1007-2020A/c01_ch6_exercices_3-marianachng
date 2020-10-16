@@ -41,25 +41,14 @@ def delete_nth_from_queue(data: Queue, position: int) -> Queue:
 
 
 def sort_stack(data: Stack) -> Stack:
-    # TODO: Retourner la séquence triée
-    values = []
-    #for i in range(10):
-    #    values.append()
-    #return Stack()
+    #STACK = LAST IN FIRST OUT 
+    sorted_stack = Stack()
+    # [1, 3, 2, 4, 8, 5]
+    #5,8,4,2,3,1
 
-    sortedStack = Stack()
-    # algorithme idea: 
-    # si stack initial n'est pas vide, on pop la derniere valeur et on la push dans le nouveau stack 
-    # ensuite, on compare le top de data avec le top de sortedStack 
-    # topdata > topsortedStack alors on push topdata dans sortedStack 
-    while data != None:
-        data.pop()
-        while sortedStack != None and int(top(sortedStack)) < int(top(data)):
-            data.push()
-            sortedStack.pop()
-        sortedStack.push(data.top)
+    sorted_stack.put_many(sorted([data.get() for _ in range(len(data))]))
 
-    return sortedStack
+    return sorted_stack
 
 
 def sort_queue(data: Queue) -> Queue:
