@@ -42,6 +42,10 @@ def delete_nth_from_queue(data: Queue, position: int) -> Queue:
 
 def sort_stack(data: Stack) -> Stack:
     # TODO: Retourner la séquence triée
+    values = []
+    #for i in range(10):
+    #    values.append()
+    #return Stack()
 
     sortedStack = Stack()
     # algorithme idea: 
