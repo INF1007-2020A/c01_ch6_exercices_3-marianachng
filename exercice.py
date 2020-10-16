@@ -23,11 +23,17 @@ def reverse_data(data: list = None):
 
 
 def delete_nth_from_stack(data: Stack, position: int) -> Stack:
+    s = Stack()
+    [data.get() for i in range(len(data)) if i != len(data) - position]
+    
     # TODO: Supprimer le énième (position) élément de data et retourner la nouvelle structure de données.
+    for i in range(data):
+        if i == len(data) - position:
+            data.get()
+        else:
+            s.put(data.get())
 
-
-    return Stack()
-
+    return [s.get() for _ in range(len(s))]
 
 def delete_nth_from_queue(data: Queue, position: int) -> Queue:
     # TODO: Supprimer le énième (position) élément de data et retourner la nouvelle structure de données.
