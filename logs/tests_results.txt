@@ -1,9 +1,19 @@
 test_delete_queue (__main__.TestExercice) ... FAIL
-test_delete_stack (__main__.TestExercice) ... FAIL
+test_delete_stack (__main__.TestExercice) ... ERROR
 test_reverse (__main__.TestExercice) ... ok
 test_sort_queue (__main__.TestExercice) ... ERROR
 test_sort_stack (__main__.TestExercice) ... ERROR
 test_string_and_structs (__main__.TestExercice) ... ERROR
+
+======================================================================
+ERROR: test_delete_stack (__main__.TestExercice)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "test_exercice.py", line 33, in test_delete_stack
+    output = exercice.delete_nth_from_stack(lifo, len(lifo) - 1)
+  File "/home/runner/work/c01_ch6_exercices_3-marianachng/c01_ch6_exercices_3-marianachng/exercice.py", line 30, in delete_nth_from_stack
+    for i in range(data):
+TypeError: 'Stack' object cannot be interpreted as an integer
 
 ======================================================================
 ERROR: test_sort_queue (__main__.TestExercice)
@@ -11,7 +21,7 @@ ERROR: test_sort_queue (__main__.TestExercice)
 Traceback (most recent call last):
   File "test_exercice.py", line 76, in test_sort_queue
     output = exercice.sort_stack(fifo)
-  File "/home/runner/work/c01_ch6_exercices_3-marianachng/c01_ch6_exercices_3-marianachng/exercice.py", line 46, in sort_stack
+  File "/home/runner/work/c01_ch6_exercices_3-marianachng/c01_ch6_exercices_3-marianachng/exercice.py", line 52, in sort_stack
     data.pop()
 AttributeError: 'Queue' object has no attribute 'pop'
 
@@ -21,7 +31,7 @@ ERROR: test_sort_stack (__main__.TestExercice)
 Traceback (most recent call last):
   File "test_exercice.py", line 61, in test_sort_stack
     output = exercice.sort_stack(lifo)
-  File "/home/runner/work/c01_ch6_exercices_3-marianachng/c01_ch6_exercices_3-marianachng/exercice.py", line 46, in sort_stack
+  File "/home/runner/work/c01_ch6_exercices_3-marianachng/c01_ch6_exercices_3-marianachng/exercice.py", line 52, in sort_stack
     data.pop()
 AttributeError: 'Stack' object has no attribute 'pop'
 
@@ -41,15 +51,7 @@ Traceback (most recent call last):
     'Mauvaise reponse'
 AssertionError: [] != [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19] : Mauvaise reponse
 
-======================================================================
-FAIL: test_delete_stack (__main__.TestExercice)
 ----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "test_exercice.py", line 38, in test_delete_stack
-    'Mauvaise reponse'
-AssertionError: [] != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18] : Mauvaise reponse
+Ran 6 tests in 0.002s
 
-----------------------------------------------------------------------
-Ran 6 tests in 0.001s
-
-FAILED (failures=2, errors=3)
+FAILED (failures=1, errors=4)
